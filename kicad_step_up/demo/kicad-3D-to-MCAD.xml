@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Kicad EDA to MCAD exporting</title>
+<date>2015-09-30</date>
+</info>
+<section xml:id="_kicad_eda_to_mcad_exporting">
+<title>Kicad EDA to MCAD exporting</title>
+<simpara>With <emphasis role="strong">kicad StepUp</emphasis> script, it is possible to work in kicad EDA with the same component model data
+available in the <emphasis role="strong">STEP AP214 3D format</emphasis>, and obtain a 3D STEP AP214 model of the pcb board and
+a complete board assemblies with electronic modules, to be used for <emphasis role="strong">MCAD interchange</emphasis>.<?asciidoc-br?>
+The accurate 3D visualization of components on board assemblies in kicad 3dviewer, can then be
+maintained in the same accuracy and aspect in STEP AP214 format, just generating VRML models
+from STEP or FreeCAD mechanical models and exporting the board through kicad StepUp script.<?asciidoc-br?>
+The <emphasis role="strong">kicad StepUp</emphasis> script maintains the usual way to work with kicad, but improves the process
+to work in a collaborative way with mechanical designers bringing near ECAD and MCAD environments.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<figure>
+<title>Kicad 3dviewer with VRML models (coming from STEP models)</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/hackrf-one-stepup-kicad-3d-viewer.png"/>
+</imageobject>
+<textobject><phrase>hackrf one stepup kicad 3d viewer</phrase></textobject>
+</mediaobject>
+</figure>
+</section>
+<section xml:id="_kicad_assemblies_in_mcad">
+<title>Kicad assemblies in MCAD</title>
+<figure>
+<title>MCAD board assembles in STEP AP214 (exported with kicad StepUp)</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/hackrf-one-stepup-catia-assembly.png"/>
+</imageobject>
+<textobject><phrase>hackrf one stepup catia assembly</phrase></textobject>
+</mediaobject>
+</figure>
+</section>
+</article>

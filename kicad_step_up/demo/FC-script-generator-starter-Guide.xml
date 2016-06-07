@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>STEP AP214 and VRML FreeCAD script generator</title>
+<date>2015-09-14</date>
+<author>
+<personname>
+<firstname>Maurice</firstname>
+</personname>
+<email>https://launchpad.net/~easyw</email>
+</author>
+<authorinitials>M</authorinitials>
+</info>
+<simpara>this repository<?asciidoc-br?>
+<link xlink:href="https://github.com/easyw/kicad-3d-models-in-freecad/">https://github.com/easyw/kicad-3d-models-in-freecad/</link><?asciidoc-br?>
+is a place to find STEP AP214 3D models and VRML kicad 3D models
+under <emphasis role="strong"><emphasis>'cadquery</emphasis>' DIR</emphasis>, there are some nice scripts that can generate<?asciidoc-br?>
+<emphasis role="strong">STEP and VRML parametric models</emphasis> for<?asciidoc-br?>
+<emphasis role="strong">GullWings ICs, DIP ICS, Chip Capacitors, Tantalum SMD Capacitors, Aluminum radial SMD and TH Capacitors, Chip resistors, pin-strip headers</emphasis></simpara>
+<simpara>All the STEP and VRML models can be used with kicad new stable release (August 2015)
+and are ready to be used with Kicad StepUp script<?asciidoc-br?>
+<emphasis role="strong">kicad StepUp</emphasis> is a new approach to export kicad board and modules in STEP AP214 (with colors).
+With kicad StepUp it is possible to export the 3D board and modules in STEP
+for MCAD interchange and create the 3D wrl libraries.<?asciidoc-br?>
+<link xlink:href="http://sourceforge.net/projects/kicadstepup/">kicadStepUp at sourceforge</link><?asciidoc-br?>
+<link xlink:href="http://bazaar.launchpad.net/~easyw/kicad-stepup/trunk/files/">kicadStepUp at lauchpad</link><?asciidoc-br?>
+<link xlink:href="http://youtu.be/Ukd47VXYzQU">YouTube Kicad StepUp demo video</link></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<sidebar>
+<title>OverView of the parametric scripts</title>
+<simpara>this repository<?asciidoc-br?>
+<link xlink:href="https://github.com/easyw/kicad-3d-models-in-freecad/">https://github.com/easyw/kicad-3d-models-in-freecad/</link><?asciidoc-br?>
+is a place to find <emphasis role="strong">STEP AP214 3D models and VRML kicad 3D models</emphasis>;<?asciidoc-br?>
+under <emphasis role="strong"><emphasis>'cadquery</emphasis>' DIR</emphasis>, there are some nice scripts that can generate<?asciidoc-br?>
+<emphasis role="strong">STEP and VRML parametric models</emphasis> for<?asciidoc-br?>
+<emphasis role="strong">SOIC, SSOP, TSSOP, SOT, QFP &#8230;&#8203; (GullWings in general), QFN ICs, DIP ICS, Chip Capacitors, Tantalum SMD Capacitors, Aluminum radial SMD and TH Capacitors, Chip resistors, pin-strip headers</emphasis> ready to go for <emphasis role="strong">kicad StepUp script</emphasis><?asciidoc-br?>
+and <emphasis role="strong">ready to go</emphasis> 3D STEP and VRML models.<?asciidoc-br?>
+The parametric scripts are derived from CadQuery scripts for generating QFP, DIP and pinHeaders
+models in X3D format.<?asciidoc-br?>
+author hyOzd<?asciidoc-br?>
+author site:  bitbucket.org/hyOzd/freecad-macros/</simpara>
+<simpara><emphasis role="marked"> requirements </emphasis><?asciidoc-br?>
+<link xlink:href="https://github.com/jmwright/cadquery-freecad-module/archive/v0.2.0.zip/">CadQuery module</link> version 0.20 or later<?asciidoc-br?>
+<link xlink:href="http://freecadweb.org/">FreeCAD</link> version 0.15 or later (use only STABLE versions)</simpara>
+</sidebar>
+<section xml:id="_running_the_scripts">
+<title>Running the scripts</title>
+<simpara>to run the script just move to the scripts dir and do:<?asciidoc-br?>
+freecad ./make_gw_export_fc.py modelName<?asciidoc-br?>
+examples in win:<?asciidoc-br?>
+<literal>c:\freecad\bin\freecad make_gw_export_fc.py SOIC_8</literal><?asciidoc-br?>
+<literal>c:\freecad\bin\freecad make_gw_export_fc.py all</literal><?asciidoc-br?>
+in linux:<?asciidoc-br?>
+<literal>freecad ./make_gw_export_fc.py SOIC_8</literal><?asciidoc-br?>
+<literal>freecad ./make_gw_export_fc.py all</literal></simpara>
+<simpara>modelName and parameters are described in:<?asciidoc-br?>
+1. cq_params_gw_soic.py file for defining SOIC mechanical data<?asciidoc-br?>
+2. cq_params_gw_qfp.py file for defining QFP mechanical data<?asciidoc-br?>
+3. cq_params_gw_ssop.py file for defining SSOP mechanical data<?asciidoc-br?>
+4. cq_params_gw_tssop.py file for defining TSSOP mechanical data<?asciidoc-br?>
+5. cq_params_gw_sot.py file for defining SOT mechanical data<?asciidoc-br?>
+6. cq_params_chip_cap.py file for defining chip capacitors mechanical data<?asciidoc-br?>
+7. cq_params_chip_res.py file for defining chip resistors mechanical data<?asciidoc-br?>
+all data in parameter files are collected from components data sheets<?asciidoc-br?>
+<emphasis role="marked">the script will generate STEP and VRML parametric models</emphasis>
+ready to be used with kicad StepUp script</simpara>
+<simpara><emphasis role="strong"><phrase role="red">Note:</phrase></emphasis> You may get a <emphasis>No module named QtNetwork</emphasis> error on Ubuntu based systems when you select the module in FreeCAD.
+If you do, run the following command line from a terminal to fix this issue.<?asciidoc-br?>
+<literal>sudo apt-get install python-pyside.qtnetwork</literal></simpara>
+<caution>
+<simpara>For Debian users, because of some lib issues, FreeCAD fusion may result with monocrome objects
+<link xlink:href="http://www.freecadweb.org/wiki/index.php?title=Download#Development_Versions">FreeCAD in Debian</link><?asciidoc-br?>
+to build your models you may consider to run FreeCAD in Lubuntu under virtualbox in Debian systems</simpara>
+</caution>
+</section>
+<section xml:id="_credits">
+<title>credits</title>
+<simpara>Author and Copyright (c) 2015 <emphasis role="strong">Maurice</emphasis> <link xlink:href="https://launchpad.net/~easyw">https://launchpad.net/~easyw</link><?asciidoc-br?>
+FreeCAD &amp; cadquery tools:<?asciidoc-br?>
+libraries to export generated models in STEP &amp; VRML format<?asciidoc-br?>
+- cad tools functions<?asciidoc-br?>
+- routines to build modules<?asciidoc-br?></simpara>
+<simpara>author <emphasis>hyOzd</emphasis><?asciidoc-br?>
+basic freecad macros - author site:  bitbucket.org/hyOzd/freecad-macros/<?asciidoc-br?></simpara>
+</section>
+<section xml:id="copyright">
+<title>Copyright</title>
+<simpara>This document <emphasis>FC-script-generator-starter-Guide</emphasis> and all the materials and files at the repository are
+Copyrighted © 2015 by Maurice.<?asciidoc-br?>
+You may distribute it and/or modify it under the terms of either
+the GNU General Public License  (<link xlink:href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</link>),
+version 3 or later, or the Creative Commons Attribution License
+(<link xlink:href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/</link>), version 3.0 or later.</simpara>
+<simpara>All trademarks within this guide belong to their legitimate owners.</simpara>
+</section>
+<section xml:id="_risk_disclaimer">
+<title>Risk disclaimer</title>
+<simpara><emphasis role="strong">USE 3D CAD DATA AT YOUR OWN RISK<?asciidoc-br?>
+DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.</emphasis></simpara>
+</section>
+</article>
