@@ -5,7 +5,7 @@ These directory includes some of the reference tools I have used to
 build my own IPC compliant RCL calculator.
 
 Please note that while we are using a common calculator for our passive 
-components the actual land patterns we build will leave in three 
+components the actual land patterns we build will live in three 
 different libraries with their associated 3d models (must match in width 
 and length our reference RCL part):
 
